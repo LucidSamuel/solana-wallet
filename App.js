@@ -20,13 +20,11 @@ export default function App() {
   });
 
   const createConnection = () => {
-   return new Connection(clusterApiUrl("devnet"));
+   // insert custom code here
   };
 
   const createAccount = () => {
-    const keypair = Keypair.generate();
-    const initialBalance = 0;
-    setAccount({ keypair: keypair, balance: 0 });
+   // insert custom code here
   };
 
   const getBalance = async (publicKey) => {
@@ -40,20 +38,7 @@ export default function App() {
   };
 
   const requestAirdrop = async (publicKey) => {
-    setRequestAirdropButton({ text: BUTTON_TEXT_LOADING, loading: true });
-    const connection = createConnection();
-
-    const airdropSignature = await connection.requestAirdrop(
-      publicKey,
-      LAMPORTS_PER_SOL
-    );
-
-    const signature = await connection.confirmTransaction(airdropSignature);
-
-    const newBalance = await getBalance(publicKey);
-
-    setAccount({ ...account, balance: newBalance });
-    setRequestAirdropButton({ text: BUTTON_TEXT, loading: false });
+    // insert custom code here
   };
 
 
@@ -62,7 +47,7 @@ export default function App() {
       {account.keypair ? (
         <>
           <View style={styles.row}>
-          <Title>Lucid Solana Wallet</Title>
+          <Title>Lucid Solana Wallet</Title> // Add custom Title
             <Title>Public Key</Title>
             <Text>{account?.keypair?.publicKey?.toBase58()}</Text>
           </View>
