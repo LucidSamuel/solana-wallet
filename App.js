@@ -20,7 +20,7 @@ export default function App() {
   });
 
   const createConnection = () => {
-    return new Connection(clusterApiUrl("devnet"));
+   return new Connection(clusterApiUrl("devnet"));
   };
 
   const createAccount = () => {
